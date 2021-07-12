@@ -1,0 +1,38 @@
+PS C:\Users\j\Documents\GitHub\Computer-Networking-A-Top-Down-Approach-NOTES\SocketProgrammingAssignment\assignment-2-UDP-ping> python .\UDPHeartBeatServer.py
+ready to serve ...
+message:  Ping 1 1626118319.0167704
+message:  Ping 2 1626118319.022768
+message:  Ping 3 1626118319.0237684
+message:  Ping 4 1626118319.024768
+message:  Ping 5 1626118319.0257676
+message:  Ping 6 1626118319.0267673
+message:  Ping 7 1626118319.027767
+message:  Ping 8 1626118319.0287666
+message:  Ping 9 1626118319.0287666
+message:  Ping 10 1626118319.0297663
+8.40230393409729
+Client stopped, heartbeat finished
+
+PS C:\Users\j\Documents\GitHub\Computer-Networking-A-Top-Down-Approach-NOTES\SocketProgrammingAssignment\assignment-2-UDP-ping> python .\UDPHeartBeatClient.py
+Sequence: 1, replied from 127.0.0.1, with RTT 0.0060s, message is Ping 1 0.0060:
+Sequence: 2, replied from 127.0.0.1, with RTT 0.0010s, message is Ping 2 0.0010:
+Sequence: 3, replied from 127.0.0.1, with RTT 0.0010s, message is Ping 3 0.0010:
+Sequence: 4, replied from 127.0.0.1, with RTT 0.0010s, message is Ping 4 0.0010:
+Sequence: 5, replied from 127.0.0.1, with RTT 0.0010s, message is Ping 5 0.0010:
+Sequence: 6, replied from 127.0.0.1, with RTT 0.0010s, message is Ping 6 0.0000:
+Sequence: 7, replied from 127.0.0.1, with RTT 0.0000s, message is Ping 7 0.0000:
+Sequence: 8, replied from 127.0.0.1, with RTT 0.0000s, message is Ping 8 0.0000:
+Sequence: 9, replied from 127.0.0.1, with RTT 0.0010s, message is Ping 9 0.0010:
+Sequence: 10, replied from 127.0.0.1, with RTT 0.0010s, message is Ping 10 0.0010:
+PS C:\Users\j\Documents\GitHub\Computer-Networking-A-Top-Down-Approach-NOTES\SocketProgrammingAssignment\assignment-2-UDP-ping> python .\UDPHeartBeatClient.py
+ready to sent ...
+HeartBeat stopped
+HeartBeat stopped
+HeartBeat stopped
+HeartBeat stopped
+HeartBeat stopped
+HeartBeat stopped
+HeartBeat stopped
+HeartBeat stopped
+HeartBeat stopped
+HeartBeat stopped
