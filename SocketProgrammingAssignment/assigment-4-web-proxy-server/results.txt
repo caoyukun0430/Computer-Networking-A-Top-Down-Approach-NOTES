@@ -1,0 +1,80 @@
+Ready to serve...
+Received a connection from: ('127.0.0.1', 1713)
+GET http://gaia.cs.umass.edu/wireshark-labs/INTRO-wireshark-file1.html HTTP/1.1
+Host: gaia.cs.umass.edu
+Proxy-Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+
+
+gaia.cs.umass.edu_wireshark-labs_INTRO-wireshark-file1.html
+File Exist:  false
+Host name: gaia.cs.umass.edu
+buffer from server 80 HTTP/1.1 200 OK
+Date: Thu, 15 Jul 2021 22:20:10 GMT
+Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.14 mod_perl/2.0.11 Perl/v5.16.3
+Last-Modified: Thu, 15 Jul 2021 05:59:01 GMT
+ETag: "51-5c7232aef2acd"
+Accept-Ranges: bytes
+Content-Length: 81
+Content-Type: text/html; charset=UTF-8
+
+<html>
+Congratulations!  You've downloaded the first Wireshark lab file!
+</html>
+
+buffer from server 80 b'HTTP/1.1 200 OK\r\nDate: Thu, 15 Jul 2021 22:20:10 GMT\r\nServer: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.14 mod_perl/2.0.11 Perl/v5.16.3\r\nLast-Modified: Thu, 15 Jul 2021 05:59:01 GMT\r\nETag: "51-5c7232aef2acd"\r\nAccept-Ranges: bytes\r\nContent-Length: 81\r\nContent-Type: text/html; charset=UTF-8\r\n\r\n<html>\nCongratulations!  You\'ve downloaded the first Wireshark lab file!\n</html>\n'
+Ready to serve...
+Received a connection from: ('127.0.0.1', 5547)
+GET http://gaia.cs.umass.edu/favicon.ico HTTP/1.1
+Host: gaia.cs.umass.edu
+Proxy-Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67
+Accept: image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Referer: http://gaia.cs.umass.edu/wireshark-labs/INTRO-wireshark-file1.html
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+
+
+gaia.cs.umass.edu_favicon.ico
+File Exist:  false
+Host name: gaia.cs.umass.edu
+buffer from server 80 HTTP/1.1 404 Not Found
+Date: Thu, 15 Jul 2021 22:20:10 GMT
+Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.14 mod_perl/2.0.11 Perl/v5.16.3
+Content-Length: 209
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>Not Found</h1>
+<p>The requested URL /favicon.ico was not found on this server.</p>
+</body></html>
+
+buffer from server 80 b'HTTP/1.1 404 Not Found\r\nDate: Thu, 15 Jul 2021 22:20:10 GMT\r\nServer: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.14 mod_perl/2.0.11 Perl/v5.16.3\r\nContent-Length: 209\r\nContent-Type: text/html; charset=iso-8859-1\r\n\r\n<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">\n<html><head>\n<title>404 Not Found</title>\n</head><body>\n<h1>Not Found</h1>\n<p>The requested URL /favicon.ico was not found on this server.</p>\n</body></html>\n'
+Ready to serve...
+Received a connection from: ('127.0.0.1', 5813)
+GET http://gaia.cs.umass.edu/wireshark-labs/INTRO-wireshark-file1.html HTTP/1.1
+Host: gaia.cs.umass.edu
+Proxy-Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.67
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+If-None-Match: "51-5c7232aef2acd"
+If-Modified-Since: Thu, 15 Jul 2021 05:59:01 GMT
+
+
+gaia.cs.umass.edu_wireshark-labs_INTRO-wireshark-file1.html
+File Exist:  true
+['HTTP/1.1 200 OK\n', '\n', 'Date: Thu, 15 Jul 2021 22:20:10 GMT\n', '\n', 'Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.14 mod_perl/2.0.11 Perl/v5.16.3\n', '\n', 'Last-Modified: Thu, 15 Jul 2021 05:59:01 GMT\n', '\n', 'ETag: "51-5c7232aef2acd"\n', '\n', 'Accept-Ranges: bytes\n', '\n', 'Content-Length: 81\n', '\n', 'Content-Type: text/html; charset=UTF-8\n', '\n', '\n', '\n', '<html>\n', "Congratulations!  You've downloaded the first Wireshark lab file!\n", '</html>\n']
+['\n', '<html>\n', "Congratulations!  You've downloaded the first Wireshark lab file!\n", '</html>\n']
+Read from cache
+Ready to serve...
