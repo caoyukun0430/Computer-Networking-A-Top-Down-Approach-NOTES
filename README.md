@@ -32,6 +32,11 @@
 - 翻译：[作业4-多线程Web代理服务器-翻译.md](SocketProgrammingAssignment/作业4-多线程Web代理服务器/作业4-多线程Web代理服务器-翻译.md)
 - 解答：[作业4-多线程Web代理服务器-解答.md](SocketProgrammingAssignment/作业4-多线程Web代理服务器/作业4-多线程Web代理服务器-解答.md)
 
+### 第3章 - 传输层
+
+#### 作业 1: 实现TCP 协议 (Page 344)
+- 文档以及解答: https://github.com/caoyukun0430/Computer-Networking-A-Top-Down-Approach-NOTES/blob/master/SocketProgrammingAssignment/implement-tcp/README.md
+
 ### 第4章 - 网络层
 
 #### 作业5：ICMP ping (Page287)
