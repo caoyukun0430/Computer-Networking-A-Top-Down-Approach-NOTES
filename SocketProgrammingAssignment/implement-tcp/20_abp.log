@@ -1,0 +1,65 @@
+-----  Stop and Wait Network Simulator Version 1.1 -------- 
+
+the number of messages to simulate: 20
+packet loss probability: 0.000000
+packet corruption probability: 0.000000
+average time between messages from sender's layer5: 10.000000
+TRACE: 0
+A_output: sending packet aaaaaaaaaaaaaaaaaaa
+B_input: valid packet received: aaaaaaaaaaaaaaaaaaa
+B_input: send ACK
+A_input: ACKed from B.
+A_output: sending packet bbbbbbbbbbbbbbbbbbb
+B_input: valid packet received: bbbbbbbbbbbbbbbbbbb
+B_input: send ACK
+A_input: ACKed from B.
+A_output: sending packet ccccccccccccccccccc
+B_input: valid packet received: ccccccccccccccccccc
+B_input: send ACK
+A_output: waiting for ACK, drop the message ddddddddddddddddddd
+A_input: ACKed from B.
+A_output: sending packet eeeeeeeeeeeeeeeeeee
+B_input: valid packet received: eeeeeeeeeeeeeeeeeee
+B_input: send ACK
+A_input: ACKed from B.
+A_output: sending packet fffffffffffffffffff
+B_input: valid packet received: fffffffffffffffffff
+B_input: send ACK
+A_input: ACKed from B.
+A_output: sending packet ggggggggggggggggggg
+A_output: waiting for ACK, drop the message hhhhhhhhhhhhhhhhhhh
+B_input: valid packet received: ggggggggggggggggggg
+B_input: send ACK
+A_input: ACKed from B.
+A_output: sending packet iiiiiiiiiiiiiiiiiii
+A_output: waiting for ACK, drop the message jjjjjjjjjjjjjjjjjjj
+B_input: valid packet received: iiiiiiiiiiiiiiiiiii
+B_input: send ACK
+A_input: ACKed from B.
+A_output: sending packet kkkkkkkkkkkkkkkkkkk
+B_input: valid packet received: kkkkkkkkkkkkkkkkkkk
+B_input: send ACK
+A_input: ACKed from B.
+A_output: sending packet lllllllllllllllllll
+B_input: valid packet received: lllllllllllllllllll
+B_input: send ACK
+A_output: waiting for ACK, drop the message mmmmmmmmmmmmmmmmmmm
+A_input: ACKed from B.
+A_output: sending packet nnnnnnnnnnnnnnnnnnn
+B_input: valid packet received: nnnnnnnnnnnnnnnnnnn
+B_input: send ACK
+A_input: ACKed from B.
+A_output: sending packet ooooooooooooooooooo
+A_output: waiting for ACK, drop the message ppppppppppppppppppp
+B_input: valid packet received: ooooooooooooooooooo
+B_input: send ACK
+A_output: waiting for ACK, drop the message qqqqqqqqqqqqqqqqqqq
+A_input: ACKed from B.
+A_output: sending packet rrrrrrrrrrrrrrrrrrr
+B_input: valid packet received: rrrrrrrrrrrrrrrrrrr
+B_input: send ACK
+A_output: waiting for ACK, drop the message sssssssssssssssssss
+A_output: waiting for ACK, drop the message ttttttttttttttttttt
+A_input: ACKed from B.
+ Simulator terminated at time 207.934280
+ after sending 20 msgs from layer5

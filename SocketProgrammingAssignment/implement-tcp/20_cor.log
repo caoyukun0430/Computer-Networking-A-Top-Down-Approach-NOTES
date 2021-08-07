@@ -1,0 +1,1146 @@
+-----  Stop and Wait Network Simulator Version 1.1 -------- 
+
+the number of messages to simulate: 20
+packet loss probability: 0.000000
+packet corruption probability: 0.200000
+average time between messages from sender's layer5: 10.000000
+TRACE: 0
+  A_output: bufferred packet (seq=0): aaaaaaaaaaaaaaaaaaa
+A buffer_next: 1
+A_output: sent packet (seq=0): aaaaaaaaaaaaaaaaaaa
+  A_output: start timer for seq=0
+  A_output: A.send_base: 0, A.next_seq: 1
+  B_input: recv packet (seq=0): aaaaaaaaaaaaaaaaaaa
+  B_input: send ACK(ack=0)
+  A_input: corrupted NAK(ack=0) drop packet.
+  A_timerinterrupt: resend packet (seq=0): aaaaaaaaaaaaaaaaaaa
+  A_timerinterrupt: restart timer + 15.000000
+  A_output: bufferred packet (seq=1): bbbbbbbbbbbbbbbbbbb
+A buffer_next: 2
+A_output: sent packet (seq=1): bbbbbbbbbbbbbbbbbbb
+  A_output: A.send_base: 0, A.next_seq: 2
+  B_input: packet seq:0, send duplicated ACK(ack=0)
+  B_input: recv packet (seq=1): bbbbbbbbbbbbbbbbbbb
+  B_input: send ACK(ack=1)
+A_input: ACKed(ack=0) from B.
+  A.send_base: 1, A.next_seq: 2
+  A_input: restart timer + 15.000000
+A_input: ACKed(ack=1) from B.
+  A.send_base: 2, A.next_seq: 2
+  A_input: stop timer
+  A_output: bufferred packet (seq=2): ccccccccccccccccccc
+A buffer_next: 3
+A_output: sent packet (seq=2): ccccccccccccccccccc
+  A_output: start timer for seq=2
+  A_output: A.send_base: 2, A.next_seq: 3
+  A_output: bufferred packet (seq=3): ddddddddddddddddddd
+A buffer_next: 4
+A_output: sent packet (seq=3): ddddddddddddddddddd
+  A_output: A.send_base: 2, A.next_seq: 4
+  B_input: packet from A is corrupted, send NAK(ack=1)
+  A_input: duplicated ACK(ack=1), drop packet.
+  B_input: packet seq:3, send duplicated ACK(ack=1)
+  A_output: bufferred packet (seq=4): eeeeeeeeeeeeeeeeeee
+A buffer_next: 5
+A_output: sent packet (seq=4): eeeeeeeeeeeeeeeeeee
+  A_output: A.send_base: 2, A.next_seq: 5
+  A_output: bufferred packet (seq=5): fffffffffffffffffff
+A buffer_next: 6
+A_output: sent packet (seq=5): fffffffffffffffffff
+  A_output: A.send_base: 2, A.next_seq: 6
+  A_timerinterrupt: resend packet (seq=2): ccccccccccccccccccc
+  A_timerinterrupt: resend packet (seq=3): ddddddddddddddddddd
+  A_timerinterrupt: resend packet (seq=4): eeeeeeeeeeeeeeeeeee
+  A_timerinterrupt: resend packet (seq=5): fffffffffffffffffff
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=1), drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=1)
+  A_input: duplicated ACK(ack=1), drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=1)
+  A_timerinterrupt: resend packet (seq=2): ccccccccccccccccccc
+  A_timerinterrupt: resend packet (seq=3): ddddddddddddddddddd
+  A_timerinterrupt: resend packet (seq=4): eeeeeeeeeeeeeeeeeee
+  A_timerinterrupt: resend packet (seq=5): fffffffffffffffffff
+  A_timerinterrupt: restart timer + 15.000000
+  A_output: bufferred packet (seq=6): ggggggggggggggggggg
+A buffer_next: 7
+A_output: sent packet (seq=6): ggggggggggggggggggg
+  A_output: A.send_base: 2, A.next_seq: 7
+  B_input: recv packet (seq=2): ccccccccccccccccccc
+  B_input: send ACK(ack=2)
+  B_input: packet from A is corrupted, send NAK(ack=2)
+  B_input: packet from A is corrupted, send NAK(ack=2)
+  A_input: corrupted NAK(ack=1) drop packet.
+  B_input: packet seq:5, send duplicated ACK(ack=2)
+A_input: ACKed(ack=2) from B.
+  A.send_base: 3, A.next_seq: 7
+  A_input: restart timer + 15.000000
+  B_input: packet from A is corrupted, send NAK(ack=2)
+  A_output: bufferred packet (seq=7): hhhhhhhhhhhhhhhhhhh
+A buffer_next: 8
+A_output: sent packet (seq=7): hhhhhhhhhhhhhhhhhhh
+  A_output: A.send_base: 3, A.next_seq: 8
+  B_input: recv packet (seq=3): ddddddddddddddddddd
+  B_input: send ACK(ack=3)
+  B_input: recv packet (seq=4): eeeeeeeeeeeeeeeeeee
+  B_input: send ACK(ack=4)
+  A_input: duplicated ACK(ack=2), drop packet.
+A_input: fast retransmit ACK(ack=2) 
+  A_timerinterrupt: resend packet (seq=3): ddddddddddddddddddd
+  A_timerinterrupt: resend packet (seq=4): eeeeeeeeeeeeeeeeeee
+  A_timerinterrupt: resend packet (seq=5): fffffffffffffffffff
+  A_timerinterrupt: resend packet (seq=6): ggggggggggggggggggg
+  A_timerinterrupt: resend packet (seq=7): hhhhhhhhhhhhhhhhhhh
+  B_input: recv packet (seq=5): fffffffffffffffffff
+  B_input: send ACK(ack=5)
+  A_output: bufferred packet (seq=8): iiiiiiiiiiiiiiiiiii
+A buffer_next: 9
+A_output: sent packet (seq=8): iiiiiiiiiiiiiiiiiii
+  A_output: A.send_base: 3, A.next_seq: 9
+  A_timerinterrupt: resend packet (seq=3): ddddddddddddddddddd
+  A_timerinterrupt: resend packet (seq=4): eeeeeeeeeeeeeeeeeee
+  A_timerinterrupt: resend packet (seq=5): fffffffffffffffffff
+  A_timerinterrupt: resend packet (seq=6): ggggggggggggggggggg
+  A_timerinterrupt: resend packet (seq=7): hhhhhhhhhhhhhhhhhhh
+  A_timerinterrupt: resend packet (seq=8): iiiiiiiiiiiiiiiiiii
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: recv packet (seq=6): ggggggggggggggggggg
+  B_input: send ACK(ack=6)
+  A_input: corrupted NAK(ack=2) drop packet.
+  B_input: recv packet (seq=7): hhhhhhhhhhhhhhhhhhh
+  B_input: send ACK(ack=7)
+  B_input: packet seq:3, send duplicated ACK(ack=7)
+  A_input: duplicated ACK(ack=2), drop packet.
+  A_timerinterrupt: resend packet (seq=3): ddddddddddddddddddd
+  A_timerinterrupt: resend packet (seq=4): eeeeeeeeeeeeeeeeeee
+  A_timerinterrupt: resend packet (seq=5): fffffffffffffffffff
+  A_timerinterrupt: resend packet (seq=6): ggggggggggggggggggg
+  A_timerinterrupt: resend packet (seq=7): hhhhhhhhhhhhhhhhhhh
+  A_timerinterrupt: resend packet (seq=8): iiiiiiiiiiiiiiiiiii
+  A_timerinterrupt: restart timer + 15.000000
+  A_output: bufferred packet (seq=9): jjjjjjjjjjjjjjjjjjj
+A buffer_next: 10
+A_output: sent packet (seq=9): jjjjjjjjjjjjjjjjjjj
+  A_output: A.send_base: 3, A.next_seq: 10
+  B_input: packet from A is corrupted, send NAK(ack=7)
+  A_input: duplicated ACK(ack=2), drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=7)
+  A_output: bufferred packet (seq=10): kkkkkkkkkkkkkkkkkkk
+A buffer_next: 11
+A_output: sent packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_output: A.send_base: 3, A.next_seq: 11
+A_input: ACKed(ack=3) from B.
+  A.send_base: 4, A.next_seq: 11
+  A_input: restart timer + 15.000000
+  A_output: bufferred packet (seq=11): lllllllllllllllllll
+A buffer_next: 12
+A_output: sent packet (seq=11): lllllllllllllllllll
+  A_output: A.send_base: 4, A.next_seq: 12
+  B_input: packet from A is corrupted, send NAK(ack=7)
+A_input: ACKed(ack=4) from B.
+  A.send_base: 5, A.next_seq: 12
+  A_input: restart timer + 15.000000
+  B_input: packet from A is corrupted, send NAK(ack=7)
+  B_input: packet from A is corrupted, send NAK(ack=7)
+  B_input: packet from A is corrupted, send NAK(ack=7)
+A_input: ACKed(ack=5) from B.
+  A.send_base: 6, A.next_seq: 12
+  A_input: restart timer + 15.000000
+  B_input: packet from A is corrupted, send NAK(ack=7)
+  B_input: packet seq:5, send duplicated ACK(ack=7)
+  A_output: bufferred packet (seq=12): mmmmmmmmmmmmmmmmmmm
+A buffer_next: 13
+A_output: sent packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_output: A.send_base: 6, A.next_seq: 13
+A_input: ACKed(ack=6) from B.
+  A.send_base: 7, A.next_seq: 13
+  A_input: restart timer + 15.000000
+  A_output: bufferred packet (seq=13): nnnnnnnnnnnnnnnnnnn
+A buffer_next: 14
+A_output: sent packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_output: A.send_base: 7, A.next_seq: 14
+  A_output: bufferred packet (seq=14): ooooooooooooooooooo
+A buffer_next: 15
+A_output: sent packet (seq=14): ooooooooooooooooooo
+  A_output: A.send_base: 7, A.next_seq: 15
+  B_input: packet seq:6, send duplicated ACK(ack=7)
+A_input: ACKed(ack=7) from B.
+  A.send_base: 8, A.next_seq: 15
+  A_input: restart timer + 15.000000
+  A_output: bufferred packet (seq=15): ppppppppppppppppppp
+A buffer_next: 16
+A_output: sent packet (seq=15): ppppppppppppppppppp
+  A_output: A.send_base: 8, A.next_seq: 16
+  A_input: corrupted NAK(ack=7) drop packet.
+  B_input: packet seq:7, send duplicated ACK(ack=7)
+  A_input: duplicated ACK(ack=7), drop packet.
+A_input: fast retransmit ACK(ack=7) 
+  A_timerinterrupt: resend packet (seq=8): iiiiiiiiiiiiiiiiiii
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_output: bufferred packet (seq=16): qqqqqqqqqqqqqqqqqqq
+A buffer_next: 17
+  B_input: recv packet (seq=8): iiiiiiiiiiiiiiiiiii
+  B_input: send ACK(ack=8)
+  B_input: packet seq:3, send duplicated ACK(ack=8)
+  A_output: bufferred packet (seq=17): rrrrrrrrrrrrrrrrrrr
+A buffer_next: 18
+  A_input: duplicated ACK(ack=7), drop packet.
+  A_timerinterrupt: resend packet (seq=8): iiiiiiiiiiiiiiiiiii
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: restart timer + 15.000000
+  A_output: bufferred packet (seq=18): sssssssssssssssssss
+A buffer_next: 19
+  B_input: packet seq:4, send duplicated ACK(ack=8)
+  A_output: bufferred packet (seq=19): ttttttttttttttttttt
+A buffer_next: 20
+  B_input: packet seq:5, send duplicated ACK(ack=8)
+  A_input: duplicated ACK(ack=7), drop packet.
+  B_input: packet seq:6, send duplicated ACK(ack=8)
+  A_input: duplicated ACK(ack=7), drop packet.
+A_input: fast retransmit ACK(ack=7) 
+  A_timerinterrupt: resend packet (seq=8): iiiiiiiiiiiiiiiiiii
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: resend packet (seq=8): iiiiiiiiiiiiiiiiiii
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: packet seq:7, send duplicated ACK(ack=8)
+  A_input: duplicated ACK(ack=7), drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=8)
+  A_timerinterrupt: resend packet (seq=8): iiiiiiiiiiiiiiiiiii
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=7), drop packet.
+  B_input: recv packet (seq=9): jjjjjjjjjjjjjjjjjjj
+  B_input: send ACK(ack=9)
+  A_input: corrupted NAK(ack=999999) drop packet.
+  A_input: corrupted NAK(ack=7) drop packet.
+  B_input: recv packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  B_input: send ACK(ack=10)
+  A_input: duplicated ACK(ack=7), drop packet.
+A_input: fast retransmit ACK(ack=7) 
+  A_timerinterrupt: resend packet (seq=8): iiiiiiiiiiiiiiiiiii
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  B_input: recv packet (seq=11): lllllllllllllllllll
+  B_input: send ACK(ack=11)
+  A_timerinterrupt: resend packet (seq=8): iiiiiiiiiiiiiiiiiii
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: recv packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  B_input: send ACK(ack=12)
+  A_input: duplicated ACK(ack=7), drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=12)
+A_input: ACKed(ack=8) from B.
+  A.send_base: 9, A.next_seq: 16
+  A_input: restart timer + 15.000000
+  B_input: packet from A is corrupted, send NAK(ack=12)
+  A_input: duplicated ACK(ack=8), drop packet.
+  B_input: packet seq:15, send duplicated ACK(ack=12)
+  A_input: duplicated ACK(ack=8), drop packet.
+A_input: fast retransmit ACK(ack=8) 
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  B_input: packet seq:8, send duplicated ACK(ack=12)
+  A_input: duplicated ACK(ack=8), drop packet.
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: corrupted NAK(ack=8) drop packet.
+  B_input: packet seq:9, send duplicated ACK(ack=12)
+  A_input: corrupted NAK(ack=8) drop packet.
+  A_input: duplicated ACK(ack=8), drop packet.
+  B_input: packet seq:10, send duplicated ACK(ack=12)
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: packet seq:11, send duplicated ACK(ack=12)
+A_input: ACKed(ack=9) from B.
+  A.send_base: 10, A.next_seq: 16
+  A_input: restart timer + 15.000000
+  B_input: packet seq:12, send duplicated ACK(ack=12)
+  A_input: corrupted NAK(ack=10) drop packet.
+  A_input: corrupted NAK(ack=999999) drop packet.
+  B_input: recv packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  B_input: send ACK(ack=13)
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: corrupted NAK(ack=12) drop packet.
+  B_input: recv packet (seq=14): ooooooooooooooooooo
+  B_input: send ACK(ack=14)
+A_input: ACKed(ack=12) from B.
+  A.send_base: 13, A.next_seq: 16
+  A_input: restart timer + 15.000000
+  B_input: recv packet (seq=15): ppppppppppppppppppp
+  B_input: send ACK(ack=15)
+  A_input: duplicated ACK(ack=12), drop packet.
+A_input: fast retransmit ACK(ack=12) 
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_input: duplicated ACK(ack=12), drop packet.
+  B_input: packet seq:8, send duplicated ACK(ack=15)
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: packet seq:9, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=12), drop packet.
+  B_input: packet seq:10, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=12), drop packet.
+A_input: fast retransmit ACK(ack=12) 
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  B_input: packet seq:11, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=12), drop packet.
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=12), drop packet.
+  B_input: packet seq:12, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=12), drop packet.
+A_input: fast retransmit ACK(ack=12) 
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  B_input: packet seq:13, send duplicated ACK(ack=15)
+  B_input: packet seq:14, send duplicated ACK(ack=15)
+A_input: ACKed(ack=13) from B.
+  A.send_base: 14, A.next_seq: 16
+  A_input: restart timer + 15.000000
+  B_input: packet seq:15, send duplicated ACK(ack=15)
+A_input: ACKed(ack=14) from B.
+  A.send_base: 15, A.next_seq: 16
+  A_input: restart timer + 15.000000
+  B_input: packet seq:8, send duplicated ACK(ack=15)
+  B_input: packet seq:9, send duplicated ACK(ack=15)
+A_input: ACKed(ack=15) from B.
+  A.send_base: 16, A.next_seq: 16
+  A_input: stop timer
+A_output: sent packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_output: start timer for seq=16
+  A_output: A.send_base: 16, A.next_seq: 17
+A_output: sent packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_output: A.send_base: 16, A.next_seq: 18
+A_output: sent packet (seq=18): sssssssssssssssssss
+  A_output: A.send_base: 16, A.next_seq: 19
+A_output: sent packet (seq=19): ttttttttttttttttttt
+  A_output: A.send_base: 16, A.next_seq: 20
+  B_input: packet from A is corrupted, send NAK(ack=15)
+  B_input: packet from A is corrupted, send NAK(ack=15)
+  B_input: packet seq:12, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:13, send duplicated ACK(ack=15)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: packet seq:14, send duplicated ACK(ack=15)
+  A_input: corrupted NAK(ack=15) drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=15)
+  B_input: packet seq:8, send duplicated ACK(ack=15)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:9, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: packet seq:11, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_input: corrupted NAK(ack=15) drop packet.
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  B_input: packet from A is corrupted, send NAK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:13, send duplicated ACK(ack=15)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:14, send duplicated ACK(ack=15)
+  B_input: packet seq:15, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:8, send duplicated ACK(ack=15)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: packet seq:9, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:10, send duplicated ACK(ack=15)
+  B_input: packet seq:11, send duplicated ACK(ack=15)
+  A_input: corrupted NAK(ack=15) drop packet.
+  B_input: packet seq:12, send duplicated ACK(ack=15)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  B_input: packet seq:13, send duplicated ACK(ack=15)
+  A_input: corrupted NAK(ack=15) drop packet.
+  B_input: packet seq:14, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: packet seq:15, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:8, send duplicated ACK(ack=15)
+  B_input: packet seq:9, send duplicated ACK(ack=15)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  B_input: packet seq:10, send duplicated ACK(ack=15)
+  B_input: packet seq:11, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:12, send duplicated ACK(ack=15)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:13, send duplicated ACK(ack=15)
+  B_input: packet seq:14, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:15, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: packet seq:8, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  B_input: packet seq:9, send duplicated ACK(ack=15)
+  B_input: packet from A is corrupted, send NAK(ack=15)
+  B_input: packet seq:11, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:12, send duplicated ACK(ack=15)
+  A_input: corrupted NAK(ack=15) drop packet.
+  B_input: packet seq:13, send duplicated ACK(ack=15)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  B_input: packet from A is corrupted, send NAK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=15)
+  B_input: packet seq:9, send duplicated ACK(ack=15)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:10, send duplicated ACK(ack=15)
+  B_input: packet seq:11, send duplicated ACK(ack=15)
+  B_input: packet from A is corrupted, send NAK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_input: corrupted NAK(ack=15) drop packet.
+  B_input: packet seq:13, send duplicated ACK(ack=15)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_input: corrupted NAK(ack=15) drop packet.
+  B_input: packet seq:14, send duplicated ACK(ack=15)
+  B_input: packet from A is corrupted, send NAK(ack=15)
+  B_input: packet seq:9, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:10, send duplicated ACK(ack=15)
+  B_input: packet from A is corrupted, send NAK(ack=15)
+  B_input: packet seq:12, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: packet seq:13, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: packet seq:15, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  B_input: packet seq:9, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:10, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: packet seq:11, send duplicated ACK(ack=15)
+  B_input: packet seq:12, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:13, send duplicated ACK(ack=15)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  B_input: packet seq:14, send duplicated ACK(ack=15)
+  A_input: corrupted NAK(ack=15) drop packet.
+  B_input: packet seq:15, send duplicated ACK(ack=15)
+  A_input: corrupted NAK(ack=15) drop packet.
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: packet seq:10, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:11, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: corrupted NAK(ack=15) drop packet.
+  B_input: packet seq:12, send duplicated ACK(ack=15)
+  B_input: packet seq:13, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=15)
+  B_input: packet seq:15, send duplicated ACK(ack=15)
+  B_input: packet seq:13, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:14, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:15, send duplicated ACK(ack=15)
+  A_input: corrupted NAK(ack=999999) drop packet.
+  B_input: packet seq:13, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: packet seq:14, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:15, send duplicated ACK(ack=15)
+  B_input: packet from A is corrupted, send NAK(ack=15)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: corrupted NAK(ack=15) drop packet.
+  B_input: packet seq:14, send duplicated ACK(ack=15)
+  B_input: packet seq:15, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  B_input: packet seq:13, send duplicated ACK(ack=15)
+  B_input: packet seq:14, send duplicated ACK(ack=15)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: corrupted NAK(ack=15) drop packet.
+  B_input: packet seq:15, send duplicated ACK(ack=15)
+  B_input: packet seq:13, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  B_input: packet seq:14, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:15, send duplicated ACK(ack=15)
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  B_input: recv packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  B_input: send ACK(ack=16)
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: recv packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  B_input: send ACK(ack=17)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_input: corrupted NAK(ack=15) drop packet.
+  B_input: recv packet (seq=18): sssssssssssssssssss
+  B_input: send ACK(ack=18)
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  B_input: packet from A is corrupted, send NAK(ack=18)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:16, send duplicated ACK(ack=18)
+  B_input: packet from A is corrupted, send NAK(ack=18)
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=18)
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  B_input: recv packet (seq=19): ttttttttttttttttttt
+  B_input: send ACK(ack=19)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  A_input: corrupted NAK(ack=15) drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=15) drop packet.
+  A_input: duplicated ACK(ack=15), drop packet.
+A_input: fast retransmit ACK(ack=15) 
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  A_input: duplicated ACK(ack=15), drop packet.
+  A_input: duplicated ACK(ack=15), drop packet.
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=16) drop packet.
+  A_input: corrupted NAK(ack=17) drop packet.
+A_input: ACKed(ack=18) from B.
+  A.send_base: 19, A.next_seq: 20
+  A_input: restart timer + 15.000000
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  A_input: duplicated ACK(ack=18), drop packet.
+A_input: fast retransmit ACK(ack=18) 
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  A_input: duplicated ACK(ack=18), drop packet.
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=18) drop packet.
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=18) drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=19)
+A_input: ACKed(ack=19) from B.
+  A.send_base: 20, A.next_seq: 20
+  A_input: stop timer
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=999999) drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=999999) drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=999999) drop packet.
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=999999) drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=999999) drop packet.
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=999999) drop packet.
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=999999) drop packet.
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=999999) drop packet.
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:16, send duplicated ACK(ack=19)
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+  B_input: packet from A is corrupted, send NAK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+  A_input: corrupted NAK(ack=19) drop packet.
+ Simulator terminated at time 2159.535645
+ after sending 20 msgs from layer5

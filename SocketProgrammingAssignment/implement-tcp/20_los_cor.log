@@ -1,0 +1,1484 @@
+-----  Stop and Wait Network Simulator Version 1.1 -------- 
+
+the number of messages to simulate: 20
+packet loss probability: 0.200000
+packet corruption probability: 0.200000
+average time between messages from sender's layer5: 10.000000
+TRACE: 2
+
+EVENT time: 18.705740,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=0): aaaaaaaaaaaaaaaaaaa
+A buffer_next: 1
+A_output: sent packet (seq=0): aaaaaaaaaaaaaaaaaaa
+  A_output: start timer for seq=0
+  A_output: A.send_base: 0, A.next_seq: 1
+
+EVENT time: 24.170835,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=0): aaaaaaaaaaaaaaaaaaa
+  B_input: send ACK(ack=0)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 29.402449,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=0) drop packet.
+
+EVENT time: 33.705742,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=0): aaaaaaaaaaaaaaaaaaa
+          TOLAYER3: packet being lost
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 35.124840,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=1): bbbbbbbbbbbbbbbbbbb
+A buffer_next: 2
+A_output: sent packet (seq=1): bbbbbbbbbbbbbbbbbbb
+  A_output: A.send_base: 0, A.next_seq: 2
+
+EVENT time: 37.392609,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=2): ccccccccccccccccccc
+A buffer_next: 3
+A_output: sent packet (seq=2): ccccccccccccccccccc
+  A_output: A.send_base: 0, A.next_seq: 3
+
+EVENT time: 38.057533,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=3): ddddddddddddddddddd
+A buffer_next: 4
+A_output: sent packet (seq=3): ddddddddddddddddddd
+  A_output: A.send_base: 0, A.next_seq: 4
+
+EVENT time: 44.369377,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=1): bbbbbbbbbbbbbbbbbbb
+  B_input: send ACK(ack=1)
+
+EVENT time: 45.847797,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=2): ccccccccccccccccccc
+  B_input: send ACK(ack=2)
+          TOLAYER3: packet being lost
+
+EVENT time: 48.705742,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=0): aaaaaaaaaaaaaaaaaaa
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=1): bbbbbbbbbbbbbbbbbbb
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=2): ccccccccccccccccccc
+  A_timerinterrupt: resend packet (seq=3): ddddddddddddddddddd
+          TOLAYER3: packet being lost
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 50.399025,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=1) from B.
+  A.send_base: 2, A.next_seq: 4
+  A_input: restart timer + 15.000000
+
+EVENT time: 52.146210,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=3): ddddddddddddddddddd
+  B_input: send ACK(ack=3)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 56.209812,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=3)
+
+EVENT time: 56.787369,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=4): eeeeeeeeeeeeeeeeeee
+A buffer_next: 5
+A_output: sent packet (seq=4): eeeeeeeeeeeeeeeeeee
+  A_output: A.send_base: 2, A.next_seq: 5
+
+EVENT time: 56.917294,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=5): fffffffffffffffffff
+A buffer_next: 6
+A_output: sent packet (seq=5): fffffffffffffffffff
+          TOLAYER3: packet being corrupted
+  A_output: A.send_base: 2, A.next_seq: 6
+
+EVENT time: 57.984180,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=3) drop packet.
+
+EVENT time: 57.993736,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=3)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 59.859375,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=3) from B.
+  A.send_base: 4, A.next_seq: 6
+  A_input: restart timer + 15.000000
+
+EVENT time: 61.615055,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=3) drop packet.
+
+EVENT time: 62.152321,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:2, send duplicated ACK(ack=3)
+
+EVENT time: 63.458710,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=4): eeeeeeeeeeeeeeeeeee
+  B_input: send ACK(ack=4)
+
+EVENT time: 64.678993,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=4)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 65.030159,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=3), drop packet.
+
+EVENT time: 66.415291,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=6): ggggggggggggggggggg
+A buffer_next: 7
+A_output: sent packet (seq=6): ggggggggggggggggggg
+          TOLAYER3: packet being corrupted
+  A_output: A.send_base: 4, A.next_seq: 7
+
+EVENT time: 68.687859,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=4)
+          TOLAYER3: packet being lost
+
+EVENT time: 68.691925,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=4) from B.
+  A.send_base: 5, A.next_seq: 7
+  A_input: restart timer + 15.000000
+
+EVENT time: 77.602707,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=4) drop packet.
+
+EVENT time: 83.691925,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=5): fffffffffffffffffff
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=6): ggggggggggggggggggg
+          TOLAYER3: packet being lost
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 85.062881,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=7): hhhhhhhhhhhhhhhhhhh
+A buffer_next: 8
+A_output: sent packet (seq=7): hhhhhhhhhhhhhhhhhhh
+  A_output: A.send_base: 5, A.next_seq: 8
+
+EVENT time: 85.498260,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=4)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 90.970863,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=4) drop packet.
+
+EVENT time: 92.189606,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:7, send duplicated ACK(ack=4)
+
+EVENT time: 96.201004,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=8): iiiiiiiiiiiiiiiiiii
+A buffer_next: 9
+A_output: sent packet (seq=8): iiiiiiiiiiiiiiiiiii
+          TOLAYER3: packet being lost
+  A_output: A.send_base: 5, A.next_seq: 9
+
+EVENT time: 97.576462,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=4), drop packet.
+
+EVENT time: 98.691925,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=5): fffffffffffffffffff
+  A_timerinterrupt: resend packet (seq=6): ggggggggggggggggggg
+  A_timerinterrupt: resend packet (seq=7): hhhhhhhhhhhhhhhhhhh
+  A_timerinterrupt: resend packet (seq=8): iiiiiiiiiiiiiiiiiii
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 100.215630,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=5): fffffffffffffffffff
+  B_input: send ACK(ack=5)
+
+EVENT time: 102.960869,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=5) from B.
+  A.send_base: 6, A.next_seq: 9
+  A_input: restart timer + 15.000000
+
+EVENT time: 109.650116,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=6): ggggggggggggggggggg
+  B_input: send ACK(ack=6)
+
+EVENT time: 111.449768,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=9): jjjjjjjjjjjjjjjjjjj
+A buffer_next: 10
+A_output: sent packet (seq=9): jjjjjjjjjjjjjjjjjjj
+          TOLAYER3: packet being lost
+  A_output: A.send_base: 6, A.next_seq: 10
+
+EVENT time: 117.670403,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=10): kkkkkkkkkkkkkkkkkkk
+A buffer_next: 11
+A_output: sent packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_output: A.send_base: 6, A.next_seq: 11
+
+EVENT time: 117.960869,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=6): ggggggggggggggggggg
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=7): hhhhhhhhhhhhhhhhhhh
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=8): iiiiiiiiiiiiiiiiiii
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 118.476021,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=7): hhhhhhhhhhhhhhhhhhh
+  B_input: send ACK(ack=7)
+
+EVENT time: 119.138298,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=6) from B.
+  A.send_base: 7, A.next_seq: 11
+  A_input: restart timer + 15.000000
+
+EVENT time: 122.797127,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=11): lllllllllllllllllll
+A buffer_next: 12
+A_output: sent packet (seq=11): lllllllllllllllllll
+          TOLAYER3: packet being corrupted
+  A_output: A.send_base: 7, A.next_seq: 12
+
+EVENT time: 124.385422,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=7) from B.
+  A.send_base: 8, A.next_seq: 12
+  A_input: restart timer + 15.000000
+
+EVENT time: 128.323990,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=8): iiiiiiiiiiiiiiiiiii
+  B_input: send ACK(ack=8)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 129.815155,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=8) drop packet.
+
+EVENT time: 134.583267,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:10, send duplicated ACK(ack=8)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 137.952667,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=8) drop packet.
+
+EVENT time: 139.385422,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=8): iiiiiiiiiiiiiiiiiii
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 140.484222,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=8)
+
+EVENT time: 141.147675,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=12): mmmmmmmmmmmmmmmmmmm
+A buffer_next: 13
+A_output: sent packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_output: A.send_base: 8, A.next_seq: 13
+
+EVENT time: 146.172043,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=8) from B.
+  A.send_base: 9, A.next_seq: 13
+  A_input: restart timer + 15.000000
+
+EVENT time: 149.307343,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=8)
+
+EVENT time: 149.429443,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=13): nnnnnnnnnnnnnnnnnnn
+A buffer_next: 14
+A_output: sent packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_output: A.send_base: 9, A.next_seq: 14
+
+EVENT time: 150.891205,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=8)
+
+EVENT time: 153.426529,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=8)
+
+EVENT time: 153.685364,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=8), drop packet.
+
+EVENT time: 155.281845,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=8), drop packet.
+A_input: fast retransmit ACK(ack=8) 
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+
+EVENT time: 157.339294,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:10, send duplicated ACK(ack=8)
+
+EVENT time: 158.183228,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=14): ooooooooooooooooooo
+A buffer_next: 15
+A_output: sent packet (seq=14): ooooooooooooooooooo
+          TOLAYER3: packet being lost
+  A_output: A.send_base: 9, A.next_seq: 15
+
+EVENT time: 159.000061,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=8), drop packet.
+
+EVENT time: 160.405685,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=8), drop packet.
+
+EVENT time: 161.172043,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 161.877731,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:11, send duplicated ACK(ack=8)
+
+EVENT time: 171.008621,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:12, send duplicated ACK(ack=8)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 171.803162,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=8), drop packet.
+A_input: fast retransmit ACK(ack=8) 
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+          TOLAYER3: packet being corrupted
+
+EVENT time: 172.388519,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=15): ppppppppppppppppppp
+A buffer_next: 16
+A_output: sent packet (seq=15): ppppppppppppppppppp
+          TOLAYER3: packet being corrupted
+  A_output: A.send_base: 9, A.next_seq: 16
+
+EVENT time: 173.282654,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:13, send duplicated ACK(ack=8)
+          TOLAYER3: packet being lost
+
+EVENT time: 173.309326,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=16): qqqqqqqqqqqqqqqqqqq
+A buffer_next: 17
+A_output: sent packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_output: A.send_base: 9, A.next_seq: 17
+
+EVENT time: 174.216888,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=8) drop packet.
+
+EVENT time: 176.172043,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=9): jjjjjjjjjjjjjjjjjjj
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  A_timerinterrupt: resend packet (seq=11): lllllllllllllllllll
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 178.154327,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=9): jjjjjjjjjjjjjjjjjjj
+  B_input: send ACK(ack=9)
+
+EVENT time: 182.511566,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=9) from B.
+  A.send_base: 10, A.next_seq: 17
+  A_input: restart timer + 15.000000
+
+EVENT time: 184.693558,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=10): kkkkkkkkkkkkkkkkkkk
+  B_input: send ACK(ack=10)
+
+EVENT time: 184.782761,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=17): rrrrrrrrrrrrrrrrrrr
+A buffer_next: 18
+A_output: sent packet (seq=17): rrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being lost
+  A_output: A.send_base: 10, A.next_seq: 18
+
+EVENT time: 188.801300,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=11): lllllllllllllllllll
+  B_input: send ACK(ack=11)
+
+EVENT time: 190.760925,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=10) from B.
+  A.send_base: 11, A.next_seq: 18
+  A_input: restart timer + 15.000000
+
+EVENT time: 192.468628,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=18): sssssssssssssssssss
+A buffer_next: 19
+A_output: sent packet (seq=18): sssssssssssssssssss
+          TOLAYER3: packet being lost
+  A_output: A.send_base: 11, A.next_seq: 19
+
+EVENT time: 196.082748,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=11)
+
+EVENT time: 196.347260,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=11) from B.
+  A.send_base: 12, A.next_seq: 19
+  A_input: restart timer + 15.000000
+
+EVENT time: 198.389221,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=11), drop packet.
+
+EVENT time: 202.588135,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:13, send duplicated ACK(ack=11)
+
+EVENT time: 209.425613,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=11), drop packet.
+
+EVENT time: 211.347260,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 211.751770,  type: 1, fromlayer5  entity: 0
+  A_output: bufferred packet (seq=19): ttttttttttttttttttt
+A buffer_next: 20
+A_output: sent packet (seq=19): ttttttttttttttttttt
+  A_output: A.send_base: 12, A.next_seq: 20
+
+EVENT time: 212.302277,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=11)
+
+EVENT time: 213.349136,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=11), drop packet.
+A_input: fast retransmit ACK(ack=11) 
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+          TOLAYER3: packet being lost
+
+EVENT time: 215.317123,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:10, send duplicated ACK(ack=11)
+          TOLAYER3: packet being lost
+
+EVENT time: 221.050171,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:11, send duplicated ACK(ack=11)
+
+EVENT time: 223.183823,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=11), drop packet.
+
+EVENT time: 224.921509,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=11)
+
+EVENT time: 226.347260,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 229.046478,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:14, send duplicated ACK(ack=11)
+
+EVENT time: 230.608856,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=11), drop packet.
+
+EVENT time: 233.477463,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=11)
+
+EVENT time: 235.014969,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  B_input: send ACK(ack=12)
+
+EVENT time: 236.079697,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=11), drop packet.
+A_input: fast retransmit ACK(ack=11) 
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+
+EVENT time: 239.154510,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=11), drop packet.
+
+EVENT time: 240.696274,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=12)
+          TOLAYER3: packet being lost
+
+EVENT time: 241.347260,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=12): mmmmmmmmmmmmmmmmmmm
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+          TOLAYER3: packet being lost
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 242.335449,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=12) from B.
+  A.send_base: 13, A.next_seq: 20
+  A_input: restart timer + 15.000000
+
+EVENT time: 242.543472,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=12)
+          TOLAYER3: packet being lost
+
+EVENT time: 248.378555,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:16, send duplicated ACK(ack=12)
+
+EVENT time: 250.326462,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:10, send duplicated ACK(ack=12)
+
+EVENT time: 252.690994,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:11, send duplicated ACK(ack=12)
+
+EVENT time: 257.335449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 257.841858,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=12), drop packet.
+
+EVENT time: 258.486511,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:12, send duplicated ACK(ack=12)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 262.263977,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=12), drop packet.
+A_input: fast retransmit ACK(ack=12) 
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+          TOLAYER3: packet being lost
+
+EVENT time: 265.105408,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  B_input: send ACK(ack=13)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 268.989014,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=12), drop packet.
+
+EVENT time: 272.261810,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=14): ooooooooooooooooooo
+  B_input: send ACK(ack=14)
+
+EVENT time: 272.335449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=13): nnnnnnnnnnnnnnnnnnn
+  A_timerinterrupt: resend packet (seq=14): ooooooooooooooooooo
+  A_timerinterrupt: resend packet (seq=15): ppppppppppppppppppp
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 272.525757,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=12) drop packet.
+
+EVENT time: 276.438324,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=15): ppppppppppppppppppp
+  B_input: send ACK(ack=15)
+          TOLAYER3: packet being lost
+
+EVENT time: 277.835876,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=13) drop packet.
+
+EVENT time: 279.948364,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=16): qqqqqqqqqqqqqqqqqqq
+  B_input: send ACK(ack=16)
+
+EVENT time: 281.903503,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=14) from B.
+  A.send_base: 15, A.next_seq: 20
+  A_input: restart timer + 15.000000
+
+EVENT time: 283.404755,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:12, send duplicated ACK(ack=16)
+
+EVENT time: 290.266449,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=16) from B.
+  A.send_base: 17, A.next_seq: 20
+  A_input: restart timer + 15.000000
+
+EVENT time: 293.017548,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:13, send duplicated ACK(ack=16)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 298.191101,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:15, send duplicated ACK(ack=16)
+
+EVENT time: 299.206696,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 300.708160,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=999999) drop packet.
+
+EVENT time: 301.497284,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:16, send duplicated ACK(ack=16)
+
+EVENT time: 302.955170,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=16)
+
+EVENT time: 305.266449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 307.508881,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=16)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 309.311646,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+A_input: fast retransmit ACK(ack=16) 
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+
+EVENT time: 311.751190,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 316.648926,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=16)
+          TOLAYER3: packet being lost
+
+EVENT time: 317.445221,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 320.266449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 323.276367,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=16) drop packet.
+
+EVENT time: 324.621216,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:12, send duplicated ACK(ack=16)
+
+EVENT time: 326.561768,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+A_input: fast retransmit ACK(ack=16) 
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+
+EVENT time: 327.081238,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:14, send duplicated ACK(ack=16)
+
+EVENT time: 331.266388,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 332.648376,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:15, send duplicated ACK(ack=16)
+
+EVENT time: 335.266449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 337.817810,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 339.600128,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:16, send duplicated ACK(ack=16)
+
+EVENT time: 341.816956,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=16)
+
+EVENT time: 346.445496,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+A_input: fast retransmit ACK(ack=16) 
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+
+EVENT time: 347.330048,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:13, send duplicated ACK(ack=16)
+
+EVENT time: 348.969727,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:14, send duplicated ACK(ack=16)
+
+EVENT time: 350.266449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 352.028137,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 354.921173,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:15, send duplicated ACK(ack=16)
+
+EVENT time: 361.368408,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 362.332642,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:16, send duplicated ACK(ack=16)
+
+EVENT time: 365.266449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 365.311249,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=16)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 365.878113,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+A_input: fast retransmit ACK(ack=16) 
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+
+EVENT time: 369.929993,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 372.438538,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=16)
+
+EVENT time: 378.564545,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 380.045166,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=16) drop packet.
+
+EVENT time: 380.266449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 380.782654,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=16)
+          TOLAYER3: packet being lost
+
+EVENT time: 384.621521,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+A_input: fast retransmit ACK(ack=16) 
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+
+EVENT time: 386.249298,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=16)
+
+EVENT time: 394.339935,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 395.266449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 395.392120,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:14, send duplicated ACK(ack=16)
+
+EVENT time: 398.646973,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 401.946411,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:15, send duplicated ACK(ack=16)
+
+EVENT time: 410.266449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 410.479279,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:16, send duplicated ACK(ack=16)
+
+EVENT time: 410.800507,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+A_input: fast retransmit ACK(ack=16) 
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+
+EVENT time: 412.148438,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 415.438080,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=16)
+
+EVENT time: 418.740997,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=16)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 423.690765,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 425.198303,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=16) drop packet.
+
+EVENT time: 425.266449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 425.271973,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:12, send duplicated ACK(ack=16)
+
+EVENT time: 430.961884,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+A_input: fast retransmit ACK(ack=16) 
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+
+EVENT time: 434.281525,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:13, send duplicated ACK(ack=16)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 439.985168,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=16) drop packet.
+
+EVENT time: 440.266449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 440.597015,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:14, send duplicated ACK(ack=16)
+          TOLAYER3: packet being lost
+
+EVENT time: 448.092743,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=16)
+
+EVENT time: 453.531952,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 455.266449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 457.508667,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=16)
+          TOLAYER3: packet being lost
+
+EVENT time: 465.754150,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:13, send duplicated ACK(ack=16)
+
+EVENT time: 470.266449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+          TOLAYER3: packet being lost
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 471.247040,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 471.334961,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:14, send duplicated ACK(ack=16)
+
+EVENT time: 475.382965,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+A_input: fast retransmit ACK(ack=16) 
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+
+EVENT time: 481.289734,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:15, send duplicated ACK(ack=16)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 485.266449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+          TOLAYER3: packet being lost
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 488.460510,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=16) drop packet.
+
+EVENT time: 489.170135,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:16, send duplicated ACK(ack=16)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 491.766235,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=16)
+
+EVENT time: 493.688538,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=16)
+
+EVENT time: 496.273773,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=999999) drop packet.
+
+EVENT time: 496.917175,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:13, send duplicated ACK(ack=16)
+
+EVENT time: 497.988434,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 500.266449,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 504.795013,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 505.765594,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:15, send duplicated ACK(ack=16)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 512.859497,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=16)
+
+EVENT time: 514.706848,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+A_input: fast retransmit ACK(ack=16) 
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+
+EVENT time: 515.266479,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being corrupted
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 519.948608,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=16)
+
+EVENT time: 520.101013,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=16) drop packet.
+
+EVENT time: 524.938538,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:13, send duplicated ACK(ack=16)
+
+EVENT time: 528.342163,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 530.266479,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 530.752747,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 532.465210,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:14, send duplicated ACK(ack=16)
+
+EVENT time: 532.589172,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+A_input: fast retransmit ACK(ack=16) 
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+
+EVENT time: 534.161621,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 538.948364,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:16, send duplicated ACK(ack=16)
+
+EVENT time: 540.237854,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=16), drop packet.
+
+EVENT time: 542.552551,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=17): rrrrrrrrrrrrrrrrrrr
+  B_input: send ACK(ack=17)
+
+EVENT time: 545.266479,  type: 0, timerinterrupt   entity: 0
+  A_timerinterrupt: resend packet (seq=17): rrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+  A_timerinterrupt: restart timer + 15.000000
+
+EVENT time: 546.158630,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=17) from B.
+  A.send_base: 18, A.next_seq: 20
+  A_input: restart timer + 15.000000
+
+EVENT time: 552.069946,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=17)
+
+EVENT time: 553.159546,  type: 2, fromlayer3  entity: 0
+  A_input: duplicated ACK(ack=17), drop packet.
+A_input: fast retransmit ACK(ack=17) 
+  A_timerinterrupt: resend packet (seq=18): sssssssssssssssssss
+          TOLAYER3: packet being lost
+  A_timerinterrupt: resend packet (seq=19): ttttttttttttttttttt
+          TOLAYER3: packet being lost
+
+EVENT time: 554.247070,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=17)
+          TOLAYER3: packet being lost
+
+EVENT time: 559.368713,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=18): sssssssssssssssssss
+  B_input: send ACK(ack=18)
+
+EVENT time: 561.083496,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=18) from B.
+  A.send_base: 19, A.next_seq: 20
+  A_input: restart timer + 15.000000
+
+EVENT time: 564.007751,  type: 2, fromlayer3  entity: 1
+  B_input: recv packet (seq=19): ttttttttttttttttttt
+  B_input: send ACK(ack=19)
+
+EVENT time: 567.529480,  type: 2, fromlayer3  entity: 0
+A_input: ACKed(ack=19) from B.
+  A.send_base: 20, A.next_seq: 20
+  A_input: stop timer
+
+EVENT time: 573.623169,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 576.992859,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 579.840393,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+          TOLAYER3: packet being lost
+
+EVENT time: 581.266968,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+          TOLAYER3: packet being lost
+
+EVENT time: 584.133057,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=19)
+          TOLAYER3: packet being lost
+
+EVENT time: 593.375427,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+
+EVENT time: 594.835449,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 599.437622,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 603.503723,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=19) drop packet.
+
+EVENT time: 609.138855,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+
+EVENT time: 614.671265,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+
+EVENT time: 617.170471,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 621.663757,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 624.521179,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 629.082886,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+
+EVENT time: 631.961548,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 638.368103,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+
+EVENT time: 639.544189,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 646.469360,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=19)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 647.841614,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 648.092102,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+
+EVENT time: 649.660767,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=19) drop packet.
+
+EVENT time: 654.247192,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+
+EVENT time: 655.749390,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 657.721558,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 663.670715,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+
+EVENT time: 667.528076,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 670.877258,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+
+EVENT time: 673.623108,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 677.613098,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 680.959961,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 682.107605,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+
+EVENT time: 686.328430,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 689.047607,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 691.430786,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=19)
+
+EVENT time: 697.927673,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+          TOLAYER3: packet being lost
+
+EVENT time: 698.207153,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 699.854187,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 704.949341,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 707.044861,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=19) drop packet.
+
+EVENT time: 709.767456,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+          TOLAYER3: packet being lost
+
+EVENT time: 712.925598,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 721.973145,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 722.582031,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+
+EVENT time: 725.119202,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 725.988892,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 726.979553,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+
+EVENT time: 733.215027,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 736.837280,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+          TOLAYER3: packet being lost
+
+EVENT time: 738.174927,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 738.326538,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 741.338501,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=19)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 742.423584,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=19)
+
+EVENT time: 745.792053,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 752.239380,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 754.976746,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=19) drop packet.
+
+EVENT time: 759.002197,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+
+EVENT time: 760.298462,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 763.852295,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=19)
+
+EVENT time: 768.168152,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 769.880859,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 772.516479,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 777.133362,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 778.896362,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 780.518005,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 780.672485,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+
+EVENT time: 781.804749,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=19) drop packet.
+
+EVENT time: 787.451172,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 789.819580,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 790.296265,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 794.345276,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+
+EVENT time: 800.200684,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 800.383118,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=19)
+          TOLAYER3: packet being lost
+
+EVENT time: 802.594971,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+
+EVENT time: 805.754028,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=19) drop packet.
+
+EVENT time: 808.378601,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 811.705688,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 815.603455,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 821.323914,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+          TOLAYER3: packet being lost
+
+EVENT time: 821.954407,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 830.303772,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+          TOLAYER3: packet being lost
+
+EVENT time: 839.268677,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 843.398621,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 843.923462,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=19)
+
+EVENT time: 845.730164,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+
+EVENT time: 846.926697,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 852.832092,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 856.403809,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+
+EVENT time: 859.431702,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 860.616943,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+
+EVENT time: 862.301636,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 864.899780,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 870.262634,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=19) drop packet.
+
+EVENT time: 874.641846,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 876.142944,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+          TOLAYER3: packet being lost
+
+EVENT time: 876.716736,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 881.678711,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 884.067383,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 891.506653,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+          TOLAYER3: packet being lost
+
+EVENT time: 893.042603,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 898.948730,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 899.284241,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=19) drop packet.
+
+EVENT time: 906.948364,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 908.230896,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+          TOLAYER3: packet being lost
+
+EVENT time: 909.750671,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+
+EVENT time: 911.592529,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 911.985107,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+
+EVENT time: 914.676453,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=19) drop packet.
+
+EVENT time: 920.026123,  type: 2, fromlayer3  entity: 1
+  B_input: packet from A is corrupted, send NAK(ack=19)
+          TOLAYER3: packet being lost
+
+EVENT time: 921.209473,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+
+EVENT time: 922.146606,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 923.162964,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 930.365051,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+          TOLAYER3: packet being lost
+
+EVENT time: 932.961548,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 933.894409,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+
+EVENT time: 935.664917,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+
+EVENT time: 936.717590,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+
+EVENT time: 939.524536,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:17, send duplicated ACK(ack=19)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 940.572266,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 943.491760,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 945.823975,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 948.201538,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=19) drop packet.
+
+EVENT time: 949.372498,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+
+EVENT time: 952.928040,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 957.173340,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 961.904419,  type: 2, fromlayer3  entity: 0
+  A_input: corrupted NAK(ack=999999) drop packet.
+
+EVENT time: 963.963074,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:18, send duplicated ACK(ack=19)
+
+EVENT time: 973.108276,  type: 2, fromlayer3  entity: 0
+
+EVENT time: 973.282227,  type: 2, fromlayer3  entity: 1
+  B_input: packet seq:19, send duplicated ACK(ack=19)
+
+EVENT time: 982.443787,  type: 2, fromlayer3  entity: 0
+ Simulator terminated at time 982.443787
+ after sending 20 msgs from layer5
