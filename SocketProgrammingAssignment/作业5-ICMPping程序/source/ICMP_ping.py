@@ -117,6 +117,7 @@ def ping(host, timeout=1):
     print("Pinging " + dest + " using Python:")
     print("")
     loss = 0
+    rtt_arr = []
     #Send ping requests to a server separated by approximately one second
     # while 1 :
     # instead of keeping pinging, we run default PING_NUMBER=4 times
@@ -128,10 +129,12 @@ def ping(host, timeout=1):
         else:
             byte_in_double = res[0]
             rtt = int(res[1]*1000)
+            rtt_arr.append(rtt)
             ttl = res[2]
-            print("Received from " + dest + ": byte(s)=" + str(byte_in_double) + " delay=" + str(rtt) + "ms TTL=" + str(ttl))
+            print("Received from %s: byte(s) = %d delay = %dms TTL = %d" % (dest, byte_in_double, rtt, ttl))
         time.sleep(1)# one second
-    print("Packet: sent = " + str(PING_NUMBER) + " received = " + str(4-loss) + " lost = " + str(loss))
+    print("Packet: sent = %d received = %d lost = %d (%.0f%%)" % (PING_NUMBER, PING_NUMBER - loss, loss, loss/PING_NUMBER*100))
+    print("Round Trip Time (rtt): min = %dms max = %dms avg = %dms" % (min(rtt_arr), max(rtt_arr), int(sum(rtt_arr)/len(rtt_arr))))
     return
 
 ping("www.google.com")
