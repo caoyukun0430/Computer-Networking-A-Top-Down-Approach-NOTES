@@ -25,5 +25,5 @@ for i in range(1, 11):
         print("Request timed out")
 avgRTT = sum(rttArray) / len(rttArray)
 lostRate = 100 - len(rttArray) * 10
-print("Max RTT: %.4f, min RTT: %.4f, average RTT: %.4f, lost rate: {:.1%}".format(max(rttArray), min(rttArray), avgRTT, lostRate))
+print("Max RTT: %.4fs, min RTT: %.4fs, average RTT: %.4fs, lost rate: %.0f%%" % (max(rttArray), min(rttArray), avgRTT, lostRate))
 clientSocket.close()
